@@ -1,0 +1,301 @@
+<!--
+body{
+	margin: 36px auto;
+	width: 90%;
+  background-color: #D15FEE;
+}
+
+h1 {
+font-size: 200%;
+}
+
+#page{
+	margin: 0 auto 53px;
+	width: 93.75%; /* 900px / 960px */
+	border: 1px solid black;
+	border-radius: 15px;
+}
+
+#main{
+	float: left;
+	width: 58%; /* 566px / 900px */
+	background-color: white;
+	color: black;
+	font-family: arial;
+	font-size: 120%;
+	padding: 1em;
+	margin: auto;
+	border-radius: 10px;
+	margin-bottom: 10px;
+
+}
+
+#other{
+	float: right;
+	width: 38%; /* 331px / 900px */
+	background-color: white;
+	font-family: arial;
+	margin: auto;
+	border-radius: 10px;
+
+}
+
+
+
+/* header section */
+header {
+	padding: 0.8em 5.33333333%;  /* 48px / 900px */
+	background-color: white;
+	border-radius: 10px;
+}
+h1.butter {
+	font-size: 300%;
+	font-family: "ByTheButterfly", serif }
+
+h2.buttertwo {
+  font-size:300%;
+  text-indent: 3em;
+	font-family: "ByTheButterfly", serif }
+
+
+	
+/* nav section */
+nav {
+display:block;
+}
+
+/* Menu CSS */ 
+
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a{
+	
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+	font-family: 'ByTheButterfly', sans-serif;
+	font-size: 250%;
+	
+}
+
+#cssmenu:before, #cssmenu:after, #cssmenu > ul:before, #cssmenu > ul:after {
+
+	content: '';
+	display: table;
+	
+}
+
+
+#cssmenu:after, #cssmenu > ul:after {
+
+	clear: both;
+	
+}
+
+#cssmenu {
+
+	
+	height: 69px;
+	background: url(pictures/bottom-bg.png) repeat-x center bottom;
+	border-radius: 2px;
+	
+}
+
+#cssmenu ul{
+
+	background: url(pictures/nav-bg.png) repeat-x 0px 4px;
+	height: 69px;
+	
+}
+
+#cssmenu ul li{
+
+	float: left;
+	list-style: none;
+	
+}
+
+#cssmenu ul li a{
+	
+	display: block;
+	height: 37px;
+	padding: 22px 30px 0;
+	margin: 4px 2px 0;
+	border-radius: 2px 2px 0 0;
+	text-decoration: none;
+	font-size: 22px;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .75);
+	font-weight: 400;
+	opacity: .9;
+}
+
+#cssmenu ul li:first-child a{
+	
+	margin: 4px 2px 0 0;
+	
+}
+
+#cssmenu ul li a:hover, #cssmenu ul li.active a{
+	
+	background: url(pictures/color.png) center bottom;
+	display: block;
+	height: 37px;
+	margin-top: 0px;
+	padding-top: 26px;
+	color: #561756;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .35);
+	opacity: 1;
+	
+}
+
+/*
+article{
+	height: 200px;
+	overflow: auto;
+}
+*/
+
+article h1, article p{
+ padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+}
+
+/* aside section */
+aside {
+	margin: 0 auto;
+	width: 69.7885196%; /* 231px / 331px */
+}
+aside h2, aside p{
+ padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+}
+
+/* footer section */
+footer{
+	clear: both;
+	background-color: #FFFFFF;
+	border-bottom-right-radius:015px;
+	border-bottom-left-radius:015px;
+	padding: 0.8em 5.33333333%;  /* 48px / 900px */
+	border-radius: 10px;
+	font-family: arial;
+	margin: auto;
+}
+-->
+
+#home {
+background-color: #D15FEE;
+}
+
+
+#content {
+    margin: auto;
+    text-align: left;
+    width: 600px;
+}
+fieldset {
+    border: 1px solid white;
+    width: 80%;
+}
+fieldset.wrapper {
+    border: 0 none;
+    margin: 20px;
+ 	font-size: 1.2em;
+    font-weight: bold;
+}
+fieldset.wrapper legend {
+    color: Black;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+fieldset.wrapper > legend {
+    font-size: 1em;
+}
+label {
+    color: #005CB3;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.required {
+    color: #AA0000;
+}
+label.required:before {
+    content: "* ";
+}
+span.required:after {
+    color: #000000;
+    content: " and are marked with an *";
+}
+input {
+    border: 1px solid white;
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+input.hidden {
+    border: 0 none;
+    display: inline;
+    margin-bottom: 0;
+    width: 0;
+}
+label input {
+    border: 0 none;
+    display: inline;
+    margin: 0 5px 0 0;
+    width: auto;
+}
+input.button {
+    display: inline;
+    margin: 0 0 0 100px;
+    text-align: center;
+    width: auto;
+}
+body {
+    background-color: #D15FEE;
+
+}
+form {
+    background: url(nav-bg.png);
+    border: 4px solid white;
+    width: 35%;
+}
+
+
+.mistake {
+    background-color: #880000;
+    border: thin solid #000000;
+    color: #FFFFFF;
+}
+#errors ol li {
+    color: red;
+}
+
+.igkt {
+	position:absolute;
+	left:20px;
+	top:20px;
+}
+
+.left {
+	position:relative;
+	left:550px;
+	top:-130px;
+}
+.right {
+	position:relative;
+	left:990px;
+	top:-180px;
+}
+.first {
+	width:100px;
+	position:relative;
+	right:-1170px;
+	top:-190px;
+}
+
+p.aboutPic {
+   text-align: center;
+}
+
+
+
+/* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-2/nat112.cur), progress !important;} /* End http://www.cursors-4u.com */
