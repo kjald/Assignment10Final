@@ -11,51 +11,45 @@
 
 <article id="main">
 	<h1>Contact Us+</h1>
-	<p>802-878-1166</p>
-	<p>Add our <a href="https://www.facebook.com/pages/Karens-Kloset/396699767018419">Facebook</a>
-	<br>
-	Follow our <a href="https://twitter.com/karens_kloset">Twitter</a>
-	<br>
-	<i>*like my Facebook page for great sales, cute jokes and upcoming events and giveaways!</i>
+        <h2 class="blue">Forms of contact - click the links below</h2>
+	<p class="blue">802-878-1166 - 
+	<a href="https://www.facebook.com/pages/Karens-Kloset/396699767018419">Facebook</a>
+	-
+	<a href="https://twitter.com/karens_kloset">Twitter</a>
+	-
+        <a href="http://instagram.com/karensklosetvt">Instagram</a>
+	
+        -
+<a href="karensklosetvt@comcast.net">Email</a>
 <br>
 <br>
-<a href="karensklosetvt@comcast.net">Email us here!</a>
+<i>**Make sure you follow our social media pages for the best daily deals!</i>
 <br>
-<br>
-<u><b>Store Hours</b></u>
-Now open 7 days a week!
-<br>
+
+        <h2 class="green">Store Hours - 7 days a week!</h2>
+<p class="green">
 Monday - Saturday: 10am - 6pm
 <br>
 Sunday: 11am - 5pm
-<br>
-<br>
-<b><u>Location:</u></b>
-<br>
+</p>
+<h2 class="red">Location is easy to find - look for Anna the mannequin!</h2>
+<p class="red">
 34 Park Street
 <br>
 Essex Junction VT, 05452
 <br>
-<i>*Easy to find - look for Lulu the mannequin! </i>
+
 <br>
-If you like her outfit or anything on the shutters, they are also for sale!
+<i>**Short drive from Burlington and worth it!  Free and convenient parking! Do you like her outfit or anything on the shutters? They are also for sale!
+</i>
 </p>
 
 <p>
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=34+Park+Street+Essex+Junction+VT,+05452&amp;ie=UTF8&amp;hq=&amp;hnear=34+Park+St,+Essex+Junction,+Chittenden,+Vermont+05452&amp;gl=us&amp;t=m&amp;z=14&amp;ll=44.488693,-73.111862&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?q=34+Park+Street+Essex+Junction+VT,+05452&amp;ie=UTF8&amp;hq=&amp;hnear=34+Park+St,+Essex+Junction,+Chittenden,+Vermont+05452&amp;gl=us&amp;t=m&amp;z=14&amp;ll=44.488693,-73.111862&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.291527288968!2d-73.11186199999996!3d44.488693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cca79d80e6c4a1f%3A0xd0d04db35b4fc6a4!2sKaren&#39;s+Kloset!5e0!3m2!1sen!2sus!4v1417418376083" width="600" height="450" frameborder="0" style="border:0"></iframe>
 </p>
 </article>
 
-<aside id="other">
 
-<a href="javascript:newWindow('pictures/kklogo.jpg', 'Mount Mansfield',700,600)">	
-	<img class="businessCard" src="pictures/kklogo.jpg"
-	width="500" 
-	height="250"
-	alt="Business Card" /> </a>
-
-
-</aside>
 
 <?php include ("footer.php"); ?>
 

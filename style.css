@@ -5,10 +5,62 @@ body{
   background-color: #D15FEE;
 }
 
-h1 {
-font-size: 1.5em;
+p {
+    padding-left:5em;
+    width: 90%;
+    font-weight: bold;
+  
 }
 
+p.red{
+    color: #FB1E61;
+}
+
+p.blue{
+    color: #039CFF;
+}
+
+p.green{
+    color: #00B516;
+}
+
+h1 {
+font-size: 2.5em;
+padding-left: 1em;
+text-decoration: underline;
+}
+h2{
+    padding-left: 2.5em;
+    font-family: ariel;
+    padding-top: .5em;
+}
+
+h2.red{
+    color: #FB1E61;
+}
+
+h2.blue{
+    color: #039CFF;
+}
+
+h2.green{
+    color: #00B516;
+}
+
+
+
+h1.footer {
+width: 60%;
+margin-left: auto;
+margin-right: auto;
+text-decoration: none;
+}
+h2.footer {
+width: 55%;
+margin-left: auto;
+margin-right: auto;
+text-decoration: none;
+}
 #page{
 	margin: 0 auto 53px;
 	width: 93.75%; /* 900px / 960px */
@@ -31,15 +83,14 @@ font-size: 1.5em;
 }
 
 #other{
-	float: right;
-	width: 38%; /* 331px / 900px */
 	background-color: white;
 	font-family: arial;
-	margin: auto;
 	border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 66%;
 
 }
-
 
 
 /* header section */
@@ -51,17 +102,6 @@ header {
         margin-left: auto;
         margin-right: auto;
 }
-h1.butter {
-	font-size: 2em;
-	font-family: "ByTheButterfly", serif }
-
-h2.buttertwo {
-  font-size:2em;
-  text-indent: 3em;
-	font-family: "ByTheButterfly", serif }
-
-
-	
 
 /* Menu CSS */ 
 
@@ -107,6 +147,15 @@ ul li a{
 	
 }
 
+ul.productClass li{
+    color: #FB1E61;
+    font-family: ariel;
+    font-weight: bold;
+    font-size: 1em;  
+    float: left;
+}
+
+
 ul li {
     float: left;
     list-style: none;
@@ -115,13 +164,19 @@ ul li {
 }
  
 li a {
-    color: #544738;
+    color: #FFFF00;
     text-decoration: none;
     float: left;
     font-size: 25px;
     padding: 12px;
 }
- 
+ li a:active {
+    color: white;
+    text-decoration: none;
+    float: left;
+    font-size: 25px;
+    padding: 12px;
+}
 li a:hover {
     color: #7eb9be;
     -webkit-transform: rotate(-10deg) scale(1.2);
@@ -137,19 +192,17 @@ article{
 }
 */
 
-article h1, article p{
- padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
-}
 
-/* aside section */
+
+/* aside section 
 aside {
 	margin: 0 auto;
-	width: 69.7885196%; /* 231px / 331px */
+	width: 69.7885196%;  231px / 331px 
 }
 aside h2, aside p{
- padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+ padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px 
 }
-
+*/
 /* footer section */
 footer{
 	clear: both;
@@ -164,7 +217,7 @@ footer{
 -->
 
 #home {
-background-color: #D15FEE;
+background-color: #1B1B1E;
 }
 
 
@@ -174,13 +227,12 @@ background-color: #D15FEE;
     width: 600px;
 }
 fieldset {
-    border: 1px solid white;
-    width: 80%;
+    border: 1px solid black;
+   
 }
 fieldset.wrapper {
     border: 0 none;
-    margin: 20px;
- 	font-size: 1em;
+    font-size: 1em;
     font-weight: bold;
 }
 fieldset.wrapper legend {
@@ -188,12 +240,13 @@ fieldset.wrapper legend {
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
+    padding-top: 1em;
 }
 fieldset.wrapper > legend {
     font-size: 1em;
 }
 label {
-    color: #005CB3;
+   color: #039CFF;
     display: block;
     font-size: 0.9em;
     font-weight: bold;
@@ -210,9 +263,10 @@ span.required:after {
 }
 input {
     border: 1px solid white;
-    display: block;
     margin-bottom: 10px;
+    display: block;
     width: 100%;
+    
 }
 input.hidden {
     border: 0 none;
@@ -221,9 +275,10 @@ input.hidden {
     width: 0;
 }
 label input {
-    border: 0 none;
-    display: inline;
-    margin: 0 5px 0 0;
+    background-color: #FB1E61;
+    border: thin solid #000000;
+    color: black;
+    display: inline;   
     width: auto;
 }
 input.button {
@@ -244,7 +299,7 @@ form {
 
 
 .mistake {
-    background-color: #880000;
+    background-color: #FB1E61;
     border: thin solid #000000;
     color: #FFFFFF;
 }
@@ -282,3 +337,4 @@ p.aboutPic {
 
 
 /* Start http://www.cursors-4u.com */ body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-2/nat112.cur), progress !important;} /* End http://www.cursors-4u.com */
+/* red color = D46A6A green = 2C8437 blue = 036F8D */

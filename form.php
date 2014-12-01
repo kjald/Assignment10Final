@@ -11,8 +11,8 @@
     
     
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 //include("tryme.php");
 //print phpinfo();
 
@@ -328,8 +328,8 @@ if (isset($_POST["btnSubmit"])) {
               method="post"
               id="frmRegister">
             <fieldset class="wrapper">
-                <legend>Register Today</legend>
-                <p>You will find Peace ...</p>
+                <h1>Register for Karen's Kloset today!+</h1>
+                
                 <fieldset class="wrapperTwo">
                     <legend>Please complete the following form</legend>
                     <fieldset class="contact">
@@ -337,8 +337,7 @@ if (isset($_POST["btnSubmit"])) {
                         
 
               
-                        
-                        
+                    
                         
                         <legend>Contact Information</legend>
 
@@ -363,21 +362,14 @@ if (isset($_POST["btnSubmit"])) {
                             <input type="text" id="txtEmail" name="txtEmail"
                                    value="<?php print $email; ?>"
                                    tabindex="120" maxlength="45" placeholder="Enter a valid email address"
-                                   <?php if ($emailERROR) print 'class="mistake"'; ?>
+                                   <?php if ($emailERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
                         
                         
                         
-                        <label for="txtScreenName" class="required">Screen Name
-                            <input type="text" id="txtScreenName" name="txtScreenName"
-                                   value="<?php print $screenName; ?>"
-                                   tabindex="120" maxlength="45" placeholder="Enter a valid screen Name"
-                                   <?php if ($screenNameERROR) print 'class="mistake"'; ?>
-                                   onfocus="this.select()"
-                                   >
-                        </label>
+                      
                      
                      <label for="txtZipCode" class="required">Zip Code</label>
                      <input type="text" id="txtZipCode" name="txtZipCode" value="" tabindex="120"
@@ -427,7 +419,24 @@ if (isset($_POST["btnSubmit"])) {
                     </fieldset>
 
 
-                    
+                    <fieldset class="checkbox">
+                       <legend>What hours are most convenient for you to shop?<em>(check all that apply.)</em>
+                    <br />
+                    <b></legend>
+
+                    <label>
+                       <label><input type="checkbox" id="chkMorning" name="chkMorning" value="Morning"
+                                       tabindex="150" /> Morning Hours: 10am - 1pm</label>
+
+                       <label><input type="checkbox" id="chkMidDay" name="chkMidDay" value="Midday"
+                                       tabindex="160" /> Midday Hours: 1pm - 3pm</label>
+
+                       <label><input type="checkbox" id="chkNight" name="chkNight" value="Night"
+                                       tabindex="170" /> Night Hours: 3pm - 6pm</label>   
+
+                      
+
+                    </fieldset>
                     
                     <fieldset class="checkbox">
                        <legend>At second hand stores what are you most interested in?<em>(check all that apply.)</em>
@@ -450,47 +459,25 @@ if (isset($_POST["btnSubmit"])) {
                     </fieldset>
                     
                     
+                   
                     
-                    <fieldset class="checkbox">
-                       <legend>What hours are most convenient for you to shop?<em>(check all that apply.)</em>
-                    <br />
-                    <b></legend>
+               
 
-                    <label>
-                       <label><input type="checkbox" id="chkMorning" name="chkMorning" value="Morning"
-                                       tabindex="150" /> Morning Hours: 10am - 1pm</label>
-
-                       <label><input type="checkbox" id="chkMidDay" name="chkMidDay" value="Midday"
-                                       tabindex="160" /> Midday Hours: 1pm - 3pm</label>
-
-                       <label><input type="checkbox" id="chkNight" name="chkNight" value="Night"
-                                       tabindex="170" /> Night Hours: 3pm - 6pm</label>   
-
-                      
-
-                    </fieldset>
-                    
-                    
-                    
-                    
-                    <fieldset class="checkbox">
+                    <fieldset class="radiotwo">
                        <legend>How often do you shop in thrift/consignment stores?</legend>
-
-                    <label>
-
-                       <label><input type="radio" id="radMinimal" name="radMinimal" value="Minimal"
-                                       tabindex="211" /> A few times a year</label>
-
-                       <label><input type="radio" id="radSometimes" name="radSometimes" value="Sometimes"
-                                       tabindex="212" /> A few times a month</label>
-
-                             <label><input type="radio" id="radRegular" name="radRegular" value="Regular"
-                                       tabindex="213" />A few times a week</label>
-
+                       <label><input type="radio" id="radMinimal" name="radMinimal" value="Minimal" 
+                                       tabindex="220" />A few times a year</label>
+                       <label><input type="radio" id="radSometimes" name="radSometimes" value="Sometimes" 
+                                       tabindex="230" />A few times a month</label>
+                       <label><input type="radio" id="radRegular" name="radRegular" value="SRegular" 
+                                       tabindex="230"  />A few times a week</label>
 
                     </fieldset>
-
-
+              
+                    
+                    
+                    
+                    
                     <fieldset class="checkbox">
                        <legend>What products would you like to see more of at my store?<em>(check all that apply.)</em>
                     <br />
@@ -539,23 +526,17 @@ if (isset($_POST["btnSubmit"])) {
                     </fieldset>
 
                     <fieldset class="radiotwo">
-                       <legend>When browsing inventory, are things easy to find? <em> (Please check one) </em></legend>
+                       <legend>Would you like to recieve email promotions? (No spam!)</legend>
                        <label><input type="radio" id="radYess" name="radtwo" value="Yes" 
                                        tabindex="240" />Yes</label>
                        <label><input type="radio" id="radNoo" name="radtwo" value="No" 
                                        tabindex="250" />No</label>
 
-                                                                                     <br />
-
-                       <label for="txtComments" class="required"><em>If no, feel free to leave a comment below.</em><br /></label>
-                       <textarea id="txtComments" name="txtComments"  required placeholder="All recommendations are heard!" tabindex="260" 
-                                   cols="20" rows="7" onfocus="this.select()">
-                       </textarea>
                     </fieldset>
 
-                    <fieldset>   
-                       <label for="shoppingActivity" class="required">When shopping, are you usually: <em>(Choose one)</em></label>
-                       <br />
+                    <fieldset>  
+                        <legend>When shopping, are you usually:</legend>
+                   
                        <select id="shoppingActivity" name="Activity" tabindex="210" size="1">
                           <option value="Alone"  selected="selected" >Alone</option>
                           <option value="sgroup" >In a small group</option>

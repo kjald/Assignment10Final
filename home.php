@@ -12,27 +12,31 @@
 
 <article id="main">
 	<h1>Home+</h1>
-	<p class="red"> <b>Klassic, Klassy, and Komfy!</b></p>
-	<p><u>New & Used Women's Clothing and Accessories!</u>
-<br>
-Sizes 0 - 3x, Petites, Plus and now accepting and selling maternity clothing.
-<br>
-Consignment days are Thu - Sat (10 items per day).</p>
+        <p><u><b>New & Used Women's Clothing and Accessories and the largest maternity selection around!!</u></b></p>
+        
+        <p class="blue"> <b>Klassic, Klassy, and Komfy!</b></p>
+        
+        
+        
 	
+        <p><b>Sizes:</b> 0 - 3x, Petites, Plus and maternity clothing! 
+        
+        </p>
+        <p><b>Consignment days:</b> Thu - Sat (10 items per day) - I will also buy outright.</p>
+        <p><u>DONATIONS ONLY ON SUNDAYS</u></p>
 	
-	
-<p>Monday - Saturday 10am - 6pm
+        <h2 class="green">Hours:</h2>	
+<p class="green">Monday - Saturday 10am - 6pm
+    <br>
 Sunday: 11am - 5pm 
 </p>
-<p>
-<b><u>Location:</u></b>
-<br>
+
+<h2 class="red">Location:</h2>
+<p class="red">
+
 34 Park Street
 <br>
 Essex Junction VT, 05452
-<br>
-Between the railroad tracks,
-look for Lulu the mannequin!
 
 <p class="aboutPic">
 
@@ -44,16 +48,6 @@ look for Lulu the mannequin!
 	
 </p>
 </article>
-
-<aside id="other">
-<a href="javascript:newWindow('pictures/kklogo.jpg', 'Mount Mansfield',700,600)">	
-	<img class="businessCard" src="pictures/kklogo.jpg"
-	width="500" 
-	height="250"
-	alt="Business Card" /> </a>
-
-
-</aside>
 
 <?php include ("footer.php"); ?>
 

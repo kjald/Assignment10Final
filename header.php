@@ -1,6 +1,12 @@
 <header>
-	<h1 class="butter">+ Karen's Kloset +</h1>
-	<h2 class="buttertwo">+ <b>802-878-1166</b> + </h2>
 
-	
+	<aside id="other">
+<a href="javascript:newWindow('pictures/kklogo.jpg', 'Mount Mansfield',700,600)">	
+	<img class="businessCard" src="pictures/kklogo.jpg"
+	width="500" 
+	height="250"
+	alt="Business Card" /> </a>
+
+
+</aside>
 </header>
