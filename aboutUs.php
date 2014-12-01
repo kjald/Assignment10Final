@@ -1,8 +1,8 @@
-<? include ("top.php"); ?>
+<?php include ("top.php"); ?>
 
 <body id="home">
 
-<? include ("header.php"); 
+<?php include ("header.php"); 
  
  print "\n";
  
@@ -43,7 +43,7 @@ Here is a short article written by Wendy Ewing from the Essex Reporter about Kar
 
 </aside>
 
-<? include ("footer.php"); ?>
+<?php include ("footer.php"); ?>
 
 </body>
 </html>

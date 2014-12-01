@@ -3,7 +3,7 @@
 
 <body id="home">
 
-<? include ("header.php"); 
+<?php include ("header.php"); 
  
  print "\n";
  
@@ -55,7 +55,7 @@ look for Lulu the mannequin!
 
 </aside>
 
-<? include ("footer.php"); ?>
+<?php include ("footer.php"); ?>
 
 </body>
 </html>

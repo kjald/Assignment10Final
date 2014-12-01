@@ -1,8 +1,8 @@
-<? include ("top.php"); ?>
+<?php include ("top.php"); ?>
 
 <body id="home">
 
-<? include ("header.php"); 
+<?php include ("header.php"); 
  
  print "\n";
  
@@ -48,7 +48,7 @@ Other sizes in need - give us a call.
 
 </aside>
 
-<? include ("footer.php"); ?>
+<?php include ("footer.php"); ?>
 
 </body>
 </html>

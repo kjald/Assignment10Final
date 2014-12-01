@@ -1,8 +1,8 @@
-<? include ("top.php"); ?>
+<?php include ("top.php"); ?>
 
 <body id="home">
 
-<? include ("header.php"); 
+<?php include ("header.php"); 
  
  print "\n";
  
@@ -57,7 +57,7 @@ If you like her outfit or anything on the shutters, they are also for sale!
 
 </aside>
 
-<? include ("footer.php"); ?>
+<?php include ("footer.php"); ?>
 
 </body>
 </html>
