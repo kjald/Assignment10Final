@@ -6,7 +6,7 @@ body{
 }
 
 h1 {
-font-size: 200%;
+font-size: 1.5em;
 }
 
 #page{
@@ -17,16 +17,16 @@ font-size: 200%;
 }
 
 #main{
-	float: left;
-	width: 58%; /* 566px / 900px */
-	background-color: white;
-	color: black;
-	font-family: arial;
-	font-size: 120%;
-	padding: 1em;
-	margin: auto;
-	border-radius: 10px;
-	margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        color: black;
+        font-family: arial;
+        font-size: 1.5em;
+        padding: 1em;
+        margin: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
 
 }
 
@@ -47,34 +47,43 @@ header {
 	padding: 0.8em 5.33333333%;  /* 48px / 900px */
 	background-color: white;
 	border-radius: 10px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
 }
 h1.butter {
-	font-size: 300%;
+	font-size: 2em;
 	font-family: "ByTheButterfly", serif }
 
 h2.buttertwo {
-  font-size:300%;
+  font-size:2em;
   text-indent: 3em;
 	font-family: "ByTheButterfly", serif }
 
 
 	
-/* nav section */
-nav {
-display:block;
-}
 
 /* Menu CSS */ 
 
-#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a{
-	
-	padding: 0;
-	margin: 0;
+#cssmenu {
+    
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+
+#cssmenu ul, #cssmenu ul li, #cssmenu 
+ul li a{
+
 	line-height: 1;
 	font-family: 'ByTheButterfly', sans-serif;
-	font-size: 250%;
-	
-}
+        margin-left: auto;
+        margin-right: auto;
+        }
+
 
 #cssmenu:before, #cssmenu:after, #cssmenu > ul:before, #cssmenu > ul:after {
 
@@ -90,43 +99,7 @@ display:block;
 	
 }
 
-#cssmenu {
 
-	
-	height: 69px;
-	background: url(pictures/bottom-bg.png) repeat-x center bottom;
-	border-radius: 2px;
-	
-}
-
-#cssmenu ul{
-
-	background: url(pictures/nav-bg.png) repeat-x 0px 4px;
-	height: 69px;
-	
-}
-
-#cssmenu ul li{
-
-	float: left;
-	list-style: none;
-	
-}
-
-#cssmenu ul li a{
-	
-	display: block;
-	height: 37px;
-	padding: 22px 30px 0;
-	margin: 4px 2px 0;
-	border-radius: 2px 2px 0 0;
-	text-decoration: none;
-	font-size: 22px;
-	color: white;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, .75);
-	font-weight: 400;
-	opacity: .9;
-}
 
 #cssmenu ul li:first-child a{
 	
@@ -134,18 +107,27 @@ display:block;
 	
 }
 
-#cssmenu ul li a:hover, #cssmenu ul li.active a{
-	
-	background: url(pictures/color.png) center bottom;
-	display: block;
-	height: 37px;
-	margin-top: 0px;
-	padding-top: 26px;
-	color: #561756;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, .35);
-	opacity: 1;
-	
+ul li {
+    float: left;
+    list-style: none;
+    margin-right: 1em; 
 }
+ 
+li a {
+    color: #544738;
+    text-decoration: none;
+    float: left;
+    font-size: 25px;
+    padding: 12px;
+}
+ 
+li a:hover {
+    color: #7eb9be;
+    -webkit-transform: rotate(-10deg) scale(1.2);
+    -moz-transform: rotate(-10deg) scale(1.2);
+    -o-transform: rotate(-10deg) scale(1.2);
+}
+
 
 /*
 article{
