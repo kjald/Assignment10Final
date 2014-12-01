@@ -526,9 +526,9 @@ if (isset($_POST["btnSubmit"])) {
                     </fieldset>
 
                     <fieldset class="radiotwo">
-                       <legend>Would you like to recieve email promotions? (No spam!)</legend>
+                       <legend>Would you like to receive email promotions? (No spam!)</legend>
                        <label><input type="radio" id="radYess" name="radtwo" value="Yes" 
-                                       tabindex="240" />Yes</label>
+                                       tabindex="240" checked="checked" />Yes</label>
                        <label><input type="radio" id="radNoo" name="radtwo" value="No" 
                                        tabindex="250" />No</label>
 
