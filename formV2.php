@@ -11,8 +11,8 @@
     
     
 <?php
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 //include("tryme.php");
 //print phpinfo();
 
@@ -33,23 +33,18 @@
  * 
   -- --------------------------------------------------------
   --
-  -- Table structure for table `tblRegister`
-  --
-
-  CREATE TABLE IF NOT EXISTS `tblRegister` (
-  `pmkRegisterId` int(11) NOT NULL AUTO_INCREMENT,
-  `fldEmail` varchar(65) DEFAULT NULL,
-  `fldDateJoined` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `fldConfirmed` tinyint(1) NOT NULL DEFAULT '0',
-  `fldApproved` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`pmkRegisterId`)
-  ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
- * I am using a surrogate key for demonstration, 
- * email would make a good primary key as well which would prevent someone
- * from entering an email address in more than one record.
+  -- Table structure for 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
-
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -81,8 +76,22 @@ $yourURL = $domain . $phpSelf;
 //
 // Initialize variables one for each form element
 // in the order they appear on the form
-$email = "";
-$screenName = "";
+$fldFirstName = "";
+$fldLastName = "";
+$fldEmail = "";
+$fldZipCode = "";
+$fldMon = "";
+$fldTue = "";
+$fldWed = "";
+$fldThu = "";
+$fldFri = "";
+$fldSat = "";
+$fldSun = "";
+$fldGroupSize = ""
+$fldItems = "";
+$fldEmails = "";
+
+
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -90,8 +99,21 @@ $screenName = "";
 //
 // Initialize Error Flags one for each form element we validate
 // in the order they appear in section 1c.
-$emailERROR = false;
-$screenNameERROR = false;
+$fldFirstNameERROR = "";
+$fldLastNameERROR = "";
+$fldEmailERROR = "";
+$fldZipCodeERROR = "";
+//$fldMonERROR = "";
+//$fldTueERROR = "";
+//$fldWedERROR = "";
+//$fldThuERROR = "";
+//$fldFriERROR = "";
+//$fldSatERROR = "";
+//$fldSunERROR = "";
+$fldGroupSizeERROR = "";
+$fldItemsERROR = "";
+$fldEmailsERROR = "";
+
 
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
@@ -127,8 +149,13 @@ if (isset($_POST["btnSubmit"])) {
 // SECTION: 2b Sanitize (clean) data
 // remove any potential JavaScript or html code from users input on the
 // form. Note it is best to follow the same order as declared in section 1c.
-    $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
-    $screenName = htmlentities($_POST["txtScreenName"], ENT_QUOTES, "UTF-8");
+    $fldFirstName = htmlentities($_POST["txtFirstName"], ENT_QUOTES, "UTF-8");
+    $fldLastName = htmlentities($_POST["txtLastName"], ENT_QUOTES, "UTF-8");
+    $fldEmail = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
+    $fldZipCode = htmlentities($_POST["txtZipCode"], ENT_QUOTES, "UTF-8");
+    $fldGroupSize = htmlentities($_POST["groupSize"], ENT_QUOTES, "UTF-8");
+    $fldItems = htmlentities($_POST["radItems"], ENT_QUOTES, "UTF-8");
+    $fldEmails = htmlentities($_POST["radEmails"], ENT_QUOTES, "UTF-8");
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -341,40 +368,45 @@ if (isset($_POST["btnSubmit"])) {
                         
                         <legend>Contact Information</legend>
 
-                          <label for="txtFname" class="required">First Name</label>
-                        <input type="text" id="txtFname" name="txtFname" value="" 
-                              tabindex="100" maxlength="25" required placeholder="enter your first name" 
-                                  class="mistake"                 				  	
-                                                                                                  autofocus onfocus="this.select()">
 
 
-
-                     <label for="txtLname" class="required">Last Name</label>
-                     <input type="text" id="txtLname" name="txtLname" value="" tabindex="120"
-                              size="25" maxlength="45" required placeholder="enter your last name"
-                              class="mistake"                autofocus onfocus="this.select()">
-
-
+                        <label for="txtEmail" class="required">First Name
+                            <input type="text" id="txtFirstName" name="txtFirstName"
+                                   value="<?php print $txtFirstName; ?>"
+                                   tabindex="10" maxlength="45" placeholder="Enter a valid First Name"
+                                   <?php if ($txtFirstNameERROR) print 'class="mistake"'; ?> 
+                                   onfocus="this.select()"
+                                   >
+                        </label>
                         
-                        
+                     <label for="txtEmail" class="required">Last Name
+                            <input type="text" id="txtLastName" name="txtLastName"
+                                   value="<?php print $txtLastName; ?>"
+                                   tabindex="20" maxlength="45" placeholder="Enter a valid Last Name"
+                                   <?php if ($txtLastNameERROR) print 'class="mistake"'; ?> 
+                                   onfocus="this.select()"
+                                   >
+                        </label>
                         
                         <label for="txtEmail" class="required">Email
                             <input type="text" id="txtEmail" name="txtEmail"
                                    value="<?php print $email; ?>"
-                                   tabindex="120" maxlength="45" placeholder="Enter a valid email address"
+                                   tabindex="30" maxlength="45" placeholder="Enter a valid email address"
                                    <?php if ($emailERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
                         
                         
-                        
+                        <label for="txtZipCode" class="required">Zip Code
+                            <input type="text" id="txtZipCode" name="txtZipCode"
+                                   value="<?php print $txtZipCode; ?>"
+                                   tabindex="40" maxlength="45" placeholder="Enter a valid Zip Code"
+                                   <?php if ($txtZipCodeERROR) print 'class="mistake"'; ?> 
+                                   onfocus="this.select()"
+                                   >
+                        </label>
                       
-                     
-                     <label for="txtZipCode" class="required">Zip Code</label>
-                     <input type="text" id="txtZipCode" name="txtZipCode" value="" tabindex="120"
-                              size="25" maxlength="45" required placeholder="type your zipcode"
-                              class="mistake"                autofocus onfocus="this.select()">
                      
                      
                     </fieldset> <!-- ends contact -->
@@ -396,26 +428,26 @@ if (isset($_POST["btnSubmit"])) {
                     <b></legend>
 
                     <label>
-                       <label><input type="checkbox" id="chkMonday" name="chkMonday" value="1"
-                                       tabindex="150" /> Monday</label>
+                       <label><input type="checkbox" id="chkMonday" name="chkMon" value="1"
+                                       tabindex="50" /> Monday</label>
 
-                       <label><input type="checkbox" id="chkTuesday" name="chkTuesday" value="1"
-                                       tabindex="160" /> Tuesday</label>
+                       <label><input type="checkbox" id="chkTuesday" name="chkTue" value="1"
+                                       tabindex="60" /> Tuesday</label>
 
-                       <label><input type="checkbox" id="chkWednesday" name="chkWednesday" value="1"
-                                       tabindex="170" /> Wednesday</label>   
+                       <label><input type="checkbox" id="chkWednesday" name="chkWed" value="1"
+                                       tabindex="70" /> Wednesday</label>   
 
-                       <label><input type="checkbox" id="chkThursday" name="chkThursday" value="1"
-                                       tabindex="180" /> Thursday</label>
+                       <label><input type="checkbox" id="chkThursday" name="chkThu" value="1"
+                                       tabindex="80" /> Thursday</label>
 
-                       <label><input type="checkbox" id="chkFriday" name="chkFriday" value="1"
-                                       tabindex="190" /> Friday</label>						 
+                       <label><input type="checkbox" id="chkFriday" name="chkFri" value="1"
+                                       tabindex="90" /> Friday</label>						 
 
-                       <label><input type="checkbox" id="chkSaturday" name="chkSaturday" value="1"
-                                       tabindex="200" /> Saturday</label>
+                       <label><input type="checkbox" id="chkSaturday" name="chkSat" value="1"
+                                       tabindex="100" /> Saturday</label>
 
-                            <label><input type="checkbox" id="chkSunday" name="chkSunday" value="1"
-                                       tabindex="210" /> Sunday</label>
+                            <label><input type="checkbox" id="chkSunday" name="chkSun" value="1"
+                                       tabindex="110" /> Sunday</label>
                     </fieldset>
 
 
@@ -430,7 +462,7 @@ if (isset($_POST["btnSubmit"])) {
                     <fieldset>  
                         <legend>When shopping, are you usually:</legend>
                    
-                       <select id="shoppingActivity" name="Activity" tabindex="210" size="1">
+                       <select id="groupSize" name="groupSize" tabindex="120" size="1">
                           <option value="One"  selected="selected" >Alone</option>
                           <option value="Two" >With another friend</option>
                           <option value="Three or more" >With two or more friends</option>
@@ -440,35 +472,27 @@ if (isset($_POST["btnSubmit"])) {
                    
                     
                
-                    
+                    <fieldset class="radiotwo">
+                       <legend>Do you come to the store looking for specific items?</legend>
+                       <label><input type="radio" id="radItemYes" name="radItem" value="1" 
+                                       tabindex="130" />Yes</label>
+                       <label><input type="radio" id="radItemNo" name="radItem" value="0" 
+                                       tabindex="140" checked="checked"  checked="checked" />No</label>
+
+                    </fieldset>
+
                     
                     
                     
                     <fieldset class="radiotwo">
                        <legend>Would you like to receive email promotions? (No spam!)</legend>
-                       <label><input type="radio" id="radEmailYes" name="radEmailYes" value="1" 
-                                       tabindex="240" checked="checked" />Yes</label>
-                       <label><input type="radio" id="radEmailNo" name="radEmailNo" value="0" 
-                                       tabindex="250" />No</label>
+                       <label><input type="radio" id="radEmailYes" name="radEmail" value="1" 
+                                       tabindex="150" checked="checked" />Yes</label>
+                       <label><input type="radio" id="radEmailNo" name="radEmail" value="0" 
+                                       tabindex="160" />No</label>
 
                     </fieldset>
 
-                    
-                    
-                    
-                    
-                    
-                    
-               
-                 
-                    <fieldset class="radiotwo">
-                       <legend>Do you come to the store looking for specific items?</legend>
-                       <label><input type="radio" id="radItemYes" name="radItemYes" value="1" 
-                                       tabindex="220" />Yes</label>
-                       <label><input type="radio" id="radItemNo" name="radItemNo" value="0" 
-                                       tabindex="230" checked="checked"  checked="checked" />No</label>
-
-                    </fieldset>
 
                     
 
