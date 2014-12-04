@@ -11,8 +11,8 @@
     
     
 <?php
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 //include("tryme.php");
 //print phpinfo();
 
@@ -52,7 +52,7 @@
 //
 // SECTION: 1a.
 // variables for the classroom purposes to help find errors.
-$debug = false;
+$debug = true;
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
     $debug = true;
 }
@@ -90,6 +90,8 @@ $fldSun = "";
 $fldGroupSize = "";
 $fldItems = "";
 $fldEmails = "";
+$fldDateJoined = "";
+
 
 
 
@@ -149,11 +151,18 @@ if (isset($_POST["btnSubmit"])) {
 // SECTION: 2b Sanitize (clean) data
 // remove any potential JavaScript or html code from users input on the
 // form. Note it is best to follow the same order as declared in section 1c.
-    $fldFirstName = htmlentities($_POST["txtFirstName"], ENT_QUOTES, "UTF-8");
-    $fldLastName = htmlentities($_POST["txtLastName"], ENT_QUOTES, "UTF-8");
+    $fldFirstName = filter_var($_POST["txtFirstName"], FILTER_SANITIZE_STRING);
+    $fldLastName = filter_var($_POST["txtLastName"], FILTER_SANITIZE_STRING);
     $fldEmail = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
-    $fldZipCode = htmlentities($_POST["txtZipCode"], ENT_QUOTES, "UTF-8");
-    $fldGroupSize = htmlentities($_POST["groupSize"], ENT_QUOTES, "UTF-8");
+    $fldZipCode = filter_var($_POST["txtZipCode"], FILTER_SANITIZE_STRING);
+    $fldMon = filter_var($_POST["chkMon"], FILTER_SANITIZE_STRING);
+    $fldTue = htmlentities($_POST["chkTue"], ENT_QUOTES, "UTF-8");
+    $fldWed = htmlentities($_POST["chkWed"], ENT_QUOTES, "UTF-8");
+    $fldThu = htmlentities($_POST["chkThu"], ENT_QUOTES, "UTF-8");
+    $fldFri = htmlentities($_POST["chkFri"], ENT_QUOTES, "UTF-8");
+    $fldSat = htmlentities($_POST["chkSat"], ENT_QUOTES, "UTF-8");
+    $fldSun = htmlentities($_POST["chkSun"], ENT_QUOTES, "UTF-8");
+    $fldGroupSize = filter_var($_POST["groupSize"], FILTER_SANITIZE_STRING);
     $fldItems = htmlentities($_POST["radItems"], ENT_QUOTES, "UTF-8");
     $fldEmails = htmlentities($_POST["radEmails"], ENT_QUOTES, "UTF-8");
 
@@ -173,7 +182,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($fldFirstName == "") {
         $errorMsg[] = "Please enter your First Name";
         $fldFirstNameERROR = true;
-    } elseif (!verifyEmail($fldFirstName)) {
+    } elseif (!verifyAlphaNum($fldFirstName)) {
         $errorMsg[] = "Your First Name appears to be incorrect.";
         $fldFirstNameERROR = true;
     }
@@ -183,7 +192,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($fldLastName == "") {
         $errorMsg[] = "Please enter your Last Name";
         $fldLastNameERROR = true;
-    } elseif (!verifyEmail($fldLastName)) {
+    } elseif (!verifyAlphaNum($fldLastName)) {
         $errorMsg[] = "Your Last Name appears to be incorrect.";
         $fldLastNameERROR = true;
     }
@@ -249,8 +258,47 @@ if (isset($_POST["btnSubmit"])) {
         $dataEntered = false;
         try {
             $thisDatabase->db->beginTransaction();
-            $query = 'INSERT INTO tblRegister SET fldEmail = ?, fldScreenName = ?';
-            $data = array($email, $screenName);
+            
+            //First try on insert
+            //$query = 'INSERT INTO tblUser, tblShopping, tblPromotion WHERE pmkUserId = ? SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?' ;
+            //$query .= 'fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?' ;
+            //$query .= 'fldEmails = ?, fldItems = ?';
+            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
+            
+            
+            //second try on insert
+            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?' ;
+            //$query .= 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?' ;
+            //$query .= 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
+            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
+            
+            //third try on insert
+            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
+            
+            //$query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
+            //$data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
+            
+            //$query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
+            //$data3 = array($fldItems, $fldEmails);
+            
+            
+            
+            
+            //FOUTH DAMN TRY F THIS
+            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+           
+            //$query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
+            
+            //$query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
+            
+           // $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
+            
+            
+            
+            //TRY 5
+            $query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+            $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
             if ($debug) {
                 print "<p>sql " . $query;
                 print"<p><pre>";
@@ -258,6 +306,33 @@ if (isset($_POST["btnSubmit"])) {
                 print"</pre></p>";
             }
             $results = $thisDatabase->insert($query, $data);
+            
+            
+            $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
+            $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
+            
+            if ($debug) {
+                print "<p>sql " . $query2;
+                print"<p><pre>";
+                print_r($data2);
+                print"</pre></p>";
+            }
+            $results = $thisDatabase->insert($query2, $data2);
+            
+            
+            $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
+            $data3 = array($fldItems, $fldEmails);
+            
+            if ($debug) {
+                print "<p>sql " . $query3;
+                print"<p><pre>";
+                print_r($data3);
+                print"</pre></p>";
+            }
+            $results = $thisDatabase->insert($query3, $data3);
+            
+            
+            
 
             $primaryKey = $thisDatabase->lastInsert();
             if ($debug)
@@ -281,7 +356,7 @@ if (isset($_POST["btnSubmit"])) {
             //#################################################################
             // create a key value for confirmation
 
-            $query = "SELECT fldDateJoined FROM tblRegister WHERE pmkRegisterId=" . $primaryKey;
+            $query = "SELECT fldDateJoined FROM tblUser WHERE pmkUserId=" . $primaryKey;
             $results = $thisDatabase->select($query);
 
             $dateSubmitted = $results[0]["fldDateJoined"];
@@ -307,18 +382,30 @@ if (isset($_POST["btnSubmit"])) {
             $messageB .= "<p>or copy and paste this url into a web browser: ";
             $messageB .= $domain . $path_parts["dirname"] . '/confirmation.php?q=' . $key1 . '&amp;w=' . $key2 . "</p>";
 
-            $messageC .= "<p><b>Email Address:</b><i>   " . $email . "</i></p>";
-            $messageC .= "<p><b>Screen Name:</b><i>   " . $screenName . "</i></p>";
+            $messageC .= "<p><b>First Name:</b><i>   " . $fldFirstName . "</i></p>";
+            $messageC .= "<p><b>Last Name:</b><i>   " . $fldLastName . "</i></p>";
+            $messageC .= "<p><b>Email Address:</b><i>   " . $fldEmail . "</i></p>";
+            $messageC .= "<p><b>Zip Code:</b><i>   " . $fldZipCode . "</i></p>";
+            $messageC .= "<p><b>Shopping Monday:</b><i>   " . $fldMon . "</i></p>";
+            $messageC .= "<p><b>Shopping Tuesday:</b><i>   " . $fldTue . "</i></p>";
+            $messageC .= "<p><b>Shopping Wednesday:</b><i>   " . $fldWed . "</i></p>";
+            $messageC .= "<p><b>Shopping Thursday:</b><i>   " . $fldThu . "</i></p>";
+            $messageC .= "<p><b>Shopping Friday:</b><i>   " . $fldFri . "</i></p>";
+            $messageC .= "<p><b>Shopping Saturday:</b><i>   " . $fldSat . "</i></p>";
+            $messageC .= "<p><b>Shopping Sunday:</b><i>   " . $fldSun . "</i></p>";
+            $messageC .= "<p><b>Group Size:</b><i>   " . $fldGroupSize . "</i></p>";
+            $messageC .= "<p><b>Lookiing for Specific Items:</b><i>   " . $fldItems . "</i></p>";
+            $messageC .= "<p><b>Recieve Emails:</b><i>   " . $fldEmails . "</i></p>";
 
             //##############################################################
             //
             // email the form's information
             //
-            $to = $email; // the person who filled out the form
+            $to = $fldEmail; // the person who filled out the form
             $cc = "";
             $bcc = "";
-            $from = "Kennys CRUD Database <noreply@yoursite.com>";
-            $subject = "CS 148 registration Email and Screen Name";
+            $from = "Karen's Kloset <noreply@yoursite.com>";
+            $subject = "Thanks for entering your data information!";
 
             $mailed = sendMail($to, $cc, $bcc, $from, $subject, $messageA . $messageB . $messageC);
         } //data entered  
@@ -351,7 +438,7 @@ if (isset($_POST["btnSubmit"])) {
             print "not ";
         }
         print "been sent</p>";
-        print "<p>To: " . $email . "</p>";
+        print "<p>To: " . $fldEmail . "</p>";
         print "<p>Mail Message:</p>";
         print $messageA . $messageC;
     } else {
@@ -412,27 +499,27 @@ if (isset($_POST["btnSubmit"])) {
 
                         <label for="txtFirstName" class="required">First Name
                             <input type="text" id="txtFirstName" name="txtFirstName"
-                                   value="<?php print $txtFirstName; ?>"
+                                   value="<?php print $fldFirstName; ?>"
                                    tabindex="10" maxlength="45" placeholder="Enter a valid First Name"
-                                   <?php if ($txtFirstNameERROR) print 'class="mistake"'; ?> 
+                                   <?php if ($fldFirstNameERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
                         
                      <label for="txtLastName" class="required">Last Name
                             <input type="text" id="txtLastName" name="txtLastName"
-                                   value="<?php print $txtLastName; ?>"
+                                   value="<?php print $fldLastName; ?>"
                                    tabindex="20" maxlength="45" placeholder="Enter a valid Last Name"
-                                   <?php if ($txtLastNameERROR) print 'class="mistake"'; ?> 
+                                   <?php if ($fldLastNameERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
                         
                         <label for="txtEmail" class="required">Email
                             <input type="text" id="txtEmail" name="txtEmail"
-                                   value="<?php print $txtEmail; ?>"
+                                   value="<?php print $fldEmail; ?>"
                                    tabindex="30" maxlength="45" placeholder="Enter a valid email address"
-                                   <?php if ($txtEmailERROR) print 'class="mistake"'; ?> 
+                                   <?php if ($fldEmailERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
@@ -440,9 +527,9 @@ if (isset($_POST["btnSubmit"])) {
                         
                         <label for="txtZipCode" class="required">Zip Code
                             <input type="text" id="txtZipCode" name="txtZipCode"
-                                   value="<?php print $txtZipCode; ?>"
+                                   value="<?php print $fldZipCode; ?>"
                                    tabindex="40" maxlength="45" placeholder="Enter a valid Zip Code"
-                                   <?php if ($txtZipCodeERROR) print 'class="mistake"'; ?> 
+                                   <?php if ($fldZipCodeERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
@@ -468,25 +555,25 @@ if (isset($_POST["btnSubmit"])) {
                     <b></legend>
 
                     <label>
-                       <label><input type="checkbox" id="chkMonday" name="chkMon" value="1"
+                       <label><input type="checkbox" id="chkMon" name="chkMon" value="1"
                                        tabindex="50" /> Monday</label>
 
-                       <label><input type="checkbox" id="chkTuesday" name="chkTue" value="1"
+                       <label><input type="checkbox" id="chkTue" name="chkTue" value="1"
                                        tabindex="60" /> Tuesday</label>
 
-                       <label><input type="checkbox" id="chkWednesday" name="chkWed" value="1"
+                       <label><input type="checkbox" id="chkWed" name="chkWed" value="1"
                                        tabindex="70" /> Wednesday</label>   
 
-                       <label><input type="checkbox" id="chkThursday" name="chkThu" value="1"
+                       <label><input type="checkbox" id="chkThu" name="chkThu" value="1"
                                        tabindex="80" /> Thursday</label>
 
-                       <label><input type="checkbox" id="chkFriday" name="chkFri" value="1"
+                       <label><input type="checkbox" id="chkFri" name="chkFri" value="1"
                                        tabindex="90" /> Friday</label>						 
 
-                       <label><input type="checkbox" id="chkSaturday" name="chkSat" value="1"
+                       <label><input type="checkbox" id="chkSat" name="chkSat" value="1"
                                        tabindex="100" /> Saturday</label>
 
-                            <label><input type="checkbox" id="chkSunday" name="chkSun" value="1"
+                            <label><input type="checkbox" id="chkSun" name="chkSun" value="1"
                                        tabindex="110" /> Sunday</label>
                     </fieldset>
 
@@ -514,9 +601,9 @@ if (isset($_POST["btnSubmit"])) {
                
                     <fieldset class="radiotwo">
                        <legend>Do you come to the store looking for specific items?</legend>
-                       <label><input type="radio" id="radItemYes" name="radItem" value="1" 
+                       <label><input type="radio" id="radItems" name="radItems" value="1" 
                                        tabindex="130" />Yes</label>
-                       <label><input type="radio" id="radItemNo" name="radItem" value="0" 
+                       <label><input type="radio" id="radItems" name="radItems" value="0" 
                                        tabindex="140" checked="checked"  checked="checked" />No</label>
 
                     </fieldset>
@@ -526,9 +613,9 @@ if (isset($_POST["btnSubmit"])) {
                     
                     <fieldset class="radiotwo">
                        <legend>Would you like to receive email promotions? (No spam!)</legend>
-                       <label><input type="radio" id="radEmailYes" name="radEmail" value="1" 
+                       <label><input type="radio" id="radEmails" name="radEmails" value="1" 
                                        tabindex="150" checked="checked" />Yes</label>
-                       <label><input type="radio" id="radEmailNo" name="radEmail" value="0" 
+                       <label><input type="radio" id="radEmails" name="radEmails" value="0" 
                                        tabindex="160" />No</label>
 
                     </fieldset>
