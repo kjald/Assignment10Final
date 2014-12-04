@@ -70,6 +70,7 @@ text-decoration: none;
 
 #main{
         margin-left: auto;
+        width: 60%;
         margin-right: auto;
         background-color: white;
         color: black;
@@ -81,7 +82,11 @@ text-decoration: none;
         margin-bottom: 10px;
 
 }
-
+li.activePage{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
 #other{
 	background-color: white;
 	font-family: arial;
@@ -205,14 +210,16 @@ aside h2, aside p{
 */
 /* footer section */
 footer{
-	clear: both;
-	background-color: #FFFFFF;
-	border-bottom-right-radius:015px;
-	border-bottom-left-radius:015px;
-	padding: 0.8em 5.33333333%;  /* 48px / 900px */
-	border-radius: 10px;
-	font-family: arial;
-	margin: auto;
+        clear: both;
+        background-color: #FFFFFF;
+        border-bottom-right-radius: 015px;
+        border-bottom-left-radius: 015px;
+        padding: 0.8em;
+        border-radius: 10px;
+        font-family: arial;
+        margin-left: auto;
+        width: 60%;
+        margin-right: auto;
 }
 -->
 
@@ -230,6 +237,16 @@ fieldset {
     border: 1px solid black;
    
 }
+
+fieldset.checkboxInline label{
+    display: inline-block;
+}
+
+fieldset.radioone label{
+    display:inline-block;
+    
+}
+
 fieldset.wrapper {
     border: 0 none;
     font-size: 1em;
@@ -250,6 +267,7 @@ label {
     display: block;
     font-size: 0.9em;
     font-weight: bold;
+    padding: .3em;
 }
 .required {
     color: #AA0000;

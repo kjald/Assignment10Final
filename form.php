@@ -390,7 +390,7 @@ if (isset($_POST["btnSubmit"])) {
                     
                     
                     
-                                        <fieldset class="checkbox">
+                                        <fieldset class="checkboxInline">
                        <legend>What days of the week do you shop at second hand stores?<em>(check all that apply.)</em>
                     <br />
                     <b></legend>
@@ -419,7 +419,7 @@ if (isset($_POST["btnSubmit"])) {
                     </fieldset>
 
 
-                    <fieldset class="checkbox">
+                    <fieldset class="checkboxInline">
                        <legend>What hours are most convenient for you to shop?<em>(check all that apply.)</em>
                     <br />
                     <b></legend>
@@ -438,7 +438,7 @@ if (isset($_POST["btnSubmit"])) {
 
                     </fieldset>
                     
-                    <fieldset class="checkbox">
+                    <fieldset class="checkboxInline">
                        <legend>At second hand stores what are you most interested in?<em>(check all that apply.)</em>
                     <br />
                     <b></legend>
@@ -463,16 +463,6 @@ if (isset($_POST["btnSubmit"])) {
                     
                
 
-                    <fieldset class="radiotwo">
-                       <legend>How often do you shop in thrift/consignment stores?</legend>
-                       <label><input type="radio" id="radMinimal" name="radMinimal" value="Minimal" 
-                                       tabindex="220" />A few times a year</label>
-                       <label><input type="radio" id="radSometimes" name="radSometimes" value="Sometimes" 
-                                       tabindex="230" />A few times a month</label>
-                       <label><input type="radio" id="radRegular" name="radRegular" value="SRegular" 
-                                       tabindex="230"  />A few times a week</label>
-
-                    </fieldset>
               
                     
                     
@@ -505,6 +495,29 @@ if (isset($_POST["btnSubmit"])) {
                             
                     </fieldset>
                     
+                    
+                    
+                    
+                    
+                    
+               
+                    
+                    
+                    <fieldset class="radioone">
+                       <legend>How often do you shop second hand stores?</legend>
+                       <label><input type="radio" id="radMinimal" name="radiotwo" value="Minimal" 
+                                       tabindex="220" />A few times a year</label>
+                       <label><input type="radio" id="radSometimes" name="radiotwo" value="Sometimes" 
+                                       tabindex="230" />A few times a month</label>
+                       <label><input type="radio" id="radRegular" name="radiotwo" value="Regular" 
+                                       tabindex="240"  checked="checked" />A few times a week</label>
+
+                    </fieldset>
+                    
+                    
+                    
+                    
+                    
                     <fieldset class="radioone">
                        <legend>How do you find my promotions?</legend>
                        <label><input type="radio" id="radYes1" name="radone1" value="Mouth" 
@@ -516,7 +529,7 @@ if (isset($_POST["btnSubmit"])) {
 
                     </fieldset>
                     
-                    <fieldset class="radioone">
+                    <fieldset class="radiotwo">
                        <legend>Do you come to the store looking for specific items?</legend>
                        <label><input type="radio" id="radYes" name="radone" value="Yes" 
                                        tabindex="220" />Yes</label>

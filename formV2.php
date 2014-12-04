@@ -11,8 +11,8 @@
     
     
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 //include("tryme.php");
 //print phpinfo();
 
@@ -87,7 +87,7 @@ $fldThu = "";
 $fldFri = "";
 $fldSat = "";
 $fldSun = "";
-$fldGroupSize = ""
+$fldGroupSize = "";
 $fldItems = "";
 $fldEmails = "";
 
@@ -99,10 +99,10 @@ $fldEmails = "";
 //
 // Initialize Error Flags one for each form element we validate
 // in the order they appear in section 1c.
-$fldFirstNameERROR = "";
-$fldLastNameERROR = "";
-$fldEmailERROR = "";
-$fldZipCodeERROR = "";
+$fldFirstNameERROR = "false";
+$fldLastNameERROR = "false";
+$fldEmailERROR = "false";
+$fldZipCodeERROR = "false";
 //$fldMonERROR = "";
 //$fldTueERROR = "";
 //$fldWedERROR = "";
@@ -110,9 +110,9 @@ $fldZipCodeERROR = "";
 //$fldFriERROR = "";
 //$fldSatERROR = "";
 //$fldSunERROR = "";
-$fldGroupSizeERROR = "";
-$fldItemsERROR = "";
-$fldEmailsERROR = "";
+$fldGroupSizeERROR = "false";
+$fldItemsERROR = "false";
+$fldEmailsERROR = "false";
 
 
 
@@ -170,25 +170,65 @@ if (isset($_POST["btnSubmit"])) {
 // see section 3b. The error flag ($emailERROR) will be used in section 3c.
 
 
-    if ($email == "") {
+    if ($fldFirstName == "") {
+        $errorMsg[] = "Please enter your First Name";
+        $fldFirstNameERROR = true;
+    } elseif (!verifyEmail($fldFirstName)) {
+        $errorMsg[] = "Your First Name appears to be incorrect.";
+        $fldFirstNameERROR = true;
+    }
+    
+    
+    
+    if ($fldLastName == "") {
+        $errorMsg[] = "Please enter your Last Name";
+        $fldLastNameERROR = true;
+    } elseif (!verifyEmail($fldLastName)) {
+        $errorMsg[] = "Your Last Name appears to be incorrect.";
+        $fldLastNameERROR = true;
+    }
+
+    
+    if ($fldEmail == "") {
         $errorMsg[] = "Please enter your Email address";
-        $emailERROR = true;
-    } elseif (!verifyEmail($email)) {
+        $fldEmailERROR = true;
+    } elseif (!verifyEmail($fldEmail)) {
         $errorMsg[] = "Your email address appears to be incorrect.";
-        $emailERROR = true;
+        $fldEmailERROR = true;
     }
     
     
-    //REPEAT FOR SCREEN NAME
-    
-    if ($screenName == "") {
-        $errorMsg[] = "Please enter your Screen Name";
-        $screenNameERROR = true;
-    } elseif (!verifyAlphaNum($screenName)) {
-        $errorMsg[] = "Your username appears to be incorrect.";
-        $screenNameERROR = true;
+    if ($fldZipCode == "") {
+        $errorMsg[] = "Please enter your Zip Code";
+        $fldZipCodeERROR = true;
+    } elseif (!verifyAlphaNum($fldZipCode)) {
+        $errorMsg[] = "Your Zip Code appears to be incorrect.";
+        $fldZipCodeERROR = true;
     }
     
+    if ($fldGroupSize == "") {
+        $errorMsg[] = "Please enter your Group Size";
+        $fldGroupSizeERROR = true;
+    } elseif (!verifyAlphaNum($fldGroupSize)) {
+        $errorMsg[] = "Your Group Size appears to be incorrect.";
+        $fldGroupSizeERROR = true;
+    }
+    
+    if ($fldItems == "") {
+        $errorMsg[] = "Please tell me about your items";
+        $fldItemsERROR = true;
+    } elseif (!verifyAlphaNum($fldItems)) {
+        $errorMsg[] = "Your items preference seems to be incorrect.";
+        $fldItemsERROR = true;
+    }
+    
+    if ($fldEmails == "") {
+        $errorMsg[] = "Please enter if you would like Emails";
+        $fldEmailsERROR = true;
+    } elseif (!verifyAlphaNum($fldEmails)) {
+        $errorMsg[] = "Your email preference appears to be incorrect.";
+        $fldEmailsERROR = true;
+    }
       
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //
@@ -370,7 +410,7 @@ if (isset($_POST["btnSubmit"])) {
 
 
 
-                        <label for="txtEmail" class="required">First Name
+                        <label for="txtFirstName" class="required">First Name
                             <input type="text" id="txtFirstName" name="txtFirstName"
                                    value="<?php print $txtFirstName; ?>"
                                    tabindex="10" maxlength="45" placeholder="Enter a valid First Name"
@@ -379,7 +419,7 @@ if (isset($_POST["btnSubmit"])) {
                                    >
                         </label>
                         
-                     <label for="txtEmail" class="required">Last Name
+                     <label for="txtLastName" class="required">Last Name
                             <input type="text" id="txtLastName" name="txtLastName"
                                    value="<?php print $txtLastName; ?>"
                                    tabindex="20" maxlength="45" placeholder="Enter a valid Last Name"
@@ -390,9 +430,9 @@ if (isset($_POST["btnSubmit"])) {
                         
                         <label for="txtEmail" class="required">Email
                             <input type="text" id="txtEmail" name="txtEmail"
-                                   value="<?php print $email; ?>"
+                                   value="<?php print $txtEmail; ?>"
                                    tabindex="30" maxlength="45" placeholder="Enter a valid email address"
-                                   <?php if ($emailERROR) print 'class="mistake"'; ?> 
+                                   <?php if ($txtEmailERROR) print 'class="mistake"'; ?> 
                                    onfocus="this.select()"
                                    >
                         </label>
