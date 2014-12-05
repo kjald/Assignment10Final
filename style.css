@@ -47,7 +47,13 @@ h2.green{
     color: #00B516;
 }
 
-
+img.businessCard{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
 
 h1.footer {
 width: 60%;
@@ -314,8 +320,31 @@ form {
     border: 4px solid white;
     
 }
-
+label input#txtFirstName {
+    
+    background-color: #FB1E61;
+border: thin solid #000000;
+color: white;
+display: block;
+width: 100%;
+}
+label input#txtLastName {
+    
+    background-color: #FB1E61;
+border: thin solid #000000;
+color: white;
+display: block;
+width: 100%;
+}
 label input#txtEmail {
+    
+    background-color: #FB1E61;
+border: thin solid #000000;
+color: white;
+display: block;
+width: 100%;
+}
+label input#txtZipCode {
     
     background-color: #FB1E61;
 border: thin solid #000000;

@@ -297,42 +297,7 @@ if (isset($_POST["btnSubmit"])) {
             
             
             //TRY 5
-            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-           // $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
-           // if ($debug) {
-           //     print "<p>sql " . $query;
-          //      print"<p><pre>";
-          //      print_r($data);
-          //      print"</pre></p>";
-         //   }
-         //   $results = $thisDatabase->insert($query, $data);
-         //   
-         //   
-         //   $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
-         //   $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
-         //   
-        //    if ($debug) {
-         //       print "<p>sql " . $query2;
-         //       print"<p><pre>";
-         //       print_r($data2);
-         //       print"</pre></p>";
-         //   }
-         //   $results = $thisDatabase->insert($query2, $data2);
-          //  
-         //   
-         //   $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-         //   $data3 = array($fldItems, $fldEmails);
-          //  
-         //   if ($debug) {
-         //       print "<p>sql " . $query3;
-         //       print"<p><pre>";
-         //       print_r($data3);
-         //       print"</pre></p>";
-         //   }
-         //   $results = $thisDatabase->insert($query3, $data3);
-            
-            
-            
+ 
             
             
             $query1 = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
@@ -341,13 +306,7 @@ if (isset($_POST["btnSubmit"])) {
             $data1 = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
             $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
             $data3 = array($fldEmails, $fldItems);
-            
-            
-            
-            
-       
-         
-           $results = $thisDatabase->insert($query1, $data1);
+            $results = $thisDatabase->insert($query1, $data1);
             $results = $thisDatabase->insert($query2, $data2);
             $results = $thisDatabase->insert($query3, $data3);
             
