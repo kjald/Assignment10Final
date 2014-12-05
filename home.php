@@ -12,7 +12,7 @@
 
 <article id="main">
 	<h1>Home+</h1>
-        <p><u><b>New & Used Women's Clothing and Accessories and the largest maternity selection around!!</u></b></p>
+        <p><u>New & Used Women's Clothing and Accessories and the largest maternity selection around!!</u></p>
         
         <p class="blue"> <b>Klassic, Klassy, and Komfy!</b></p>
         

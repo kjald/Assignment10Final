@@ -297,39 +297,63 @@ if (isset($_POST["btnSubmit"])) {
             
             
             //TRY 5
-            $query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-            $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
-            if ($debug) {
-                print "<p>sql " . $query;
-                print"<p><pre>";
-                print_r($data);
-                print"</pre></p>";
-            }
-            $results = $thisDatabase->insert($query, $data);
+            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+           // $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
+           // if ($debug) {
+           //     print "<p>sql " . $query;
+          //      print"<p><pre>";
+          //      print_r($data);
+          //      print"</pre></p>";
+         //   }
+         //   $results = $thisDatabase->insert($query, $data);
+         //   
+         //   
+         //   $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
+         //   $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
+         //   
+        //    if ($debug) {
+         //       print "<p>sql " . $query2;
+         //       print"<p><pre>";
+         //       print_r($data2);
+         //       print"</pre></p>";
+         //   }
+         //   $results = $thisDatabase->insert($query2, $data2);
+          //  
+         //   
+         //   $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
+         //   $data3 = array($fldItems, $fldEmails);
+          //  
+         //   if ($debug) {
+         //       print "<p>sql " . $query3;
+         //       print"<p><pre>";
+         //       print_r($data3);
+         //       print"</pre></p>";
+         //   }
+         //   $results = $thisDatabase->insert($query3, $data3);
             
             
-            $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
+            
+            
+            
+            $query1 = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+            $query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?'; 
+            $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?'; 
+            $data1 = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
             $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
+            $data3 = array($fldEmails, $fldItems);
             
-            if ($debug) {
-                print "<p>sql " . $query2;
-                print"<p><pre>";
-                print_r($data2);
-                print"</pre></p>";
-            }
+            
+            
+            
+       
+         
+           $results = $thisDatabase->insert($query1, $data1);
             $results = $thisDatabase->insert($query2, $data2);
-            
-            
-            $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-            $data3 = array($fldItems, $fldEmails);
-            
-            if ($debug) {
-                print "<p>sql " . $query3;
-                print"<p><pre>";
-                print_r($data3);
-                print"</pre></p>";
-            }
             $results = $thisDatabase->insert($query3, $data3);
+            
+            
+          
+            
             
             
             
@@ -552,28 +576,28 @@ if (isset($_POST["btnSubmit"])) {
                                         <fieldset class="checkboxInline">
                        <legend>What days of the week do you shop at second hand stores?<em>(check all that apply.)</em>
                     <br />
-                    <b></legend>
+                    </legend>
 
-                    <label>
-                       <label><input type="checkbox" id="chkMon" name="chkMon" value="1"
+                                            <label for="chkMon">
+                       <input type="checkbox" id="chkMon" name="chkMon" value="1"
                                        tabindex="50" /> Monday</label>
 
-                       <label><input type="checkbox" id="chkTue" name="chkTue" value="1"
+                       <label for="chkTue"><input type="checkbox" id="chkTue" name="chkTue" value="1"
                                        tabindex="60" /> Tuesday</label>
 
-                       <label><input type="checkbox" id="chkWed" name="chkWed" value="1"
+                       <label for="chkWed"><input type="checkbox" id="chkWed" name="chkWed" value="1"
                                        tabindex="70" /> Wednesday</label>   
 
-                       <label><input type="checkbox" id="chkThu" name="chkThu" value="1"
+                       <label for="chkThu"><input type="checkbox" id="chkThu" name="chkThu" value="1"
                                        tabindex="80" /> Thursday</label>
 
-                       <label><input type="checkbox" id="chkFri" name="chkFri" value="1"
+                       <label for="chkFri"><input type="checkbox" id="chkFri" name="chkFri" value="1"
                                        tabindex="90" /> Friday</label>						 
 
-                       <label><input type="checkbox" id="chkSat" name="chkSat" value="1"
+                       <label for="chkSat"><input type="checkbox" id="chkSat" name="chkSat" value="1"
                                        tabindex="100" /> Saturday</label>
 
-                            <label><input type="checkbox" id="chkSun" name="chkSun" value="1"
+                            <label for="chkSun"><input type="checkbox" id="chkSun" name="chkSun" value="1"
                                        tabindex="110" /> Sunday</label>
                     </fieldset>
 
@@ -601,10 +625,10 @@ if (isset($_POST["btnSubmit"])) {
                
                     <fieldset class="radiotwo">
                        <legend>Do you come to the store looking for specific items?</legend>
-                       <label><input type="radio" id="radItems" name="radItems" value="1" 
+                       <label><input type="radio" id="radItemsYes" name="radItems" value="1" 
                                        tabindex="130" />Yes</label>
-                       <label><input type="radio" id="radItems" name="radItems" value="0" 
-                                       tabindex="140" checked="checked"  checked="checked" />No</label>
+                       <label><input type="radio" id="radItemsNo" name="radItems" value="0" 
+                                       tabindex="140" checked="checked"/>No</label>
 
                     </fieldset>
 
@@ -613,9 +637,9 @@ if (isset($_POST["btnSubmit"])) {
                     
                     <fieldset class="radiotwo">
                        <legend>Would you like to receive email promotions? (No spam!)</legend>
-                       <label><input type="radio" id="radEmails" name="radEmails" value="1" 
+                       <label><input type="radio" id="radEmailsYes" name="radEmails" value="1" 
                                        tabindex="150" checked="checked" />Yes</label>
-                       <label><input type="radio" id="radEmails" name="radEmails" value="0" 
+                       <label><input type="radio" id="radEmailsNo" name="radEmails" value="0" 
                                        tabindex="160" />No</label>
 
                     </fieldset>
@@ -650,4 +674,3 @@ if ($debug)
 ?>
 
 </body>
-</html>

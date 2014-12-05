@@ -26,6 +26,6 @@ print '<p>Today is: <time datetime="' . $todayDateValue . '">' . $today . "</tim
 NEEDS ? >
  
  <p>Created by: Kenny Alderman</p>
- <!--   Nov 30th, 2014 -->
+ //   Nov 30th, 2014 -->
 
 </footer>

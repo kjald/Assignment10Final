@@ -45,7 +45,7 @@ Essex Junction VT, 05452
 </p>
 
 <p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.291527288968!2d-73.11186199999996!3d44.488693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cca79d80e6c4a1f%3A0xd0d04db35b4fc6a4!2sKaren&#39;s+Kloset!5e0!3m2!1sen!2sus!4v1417418376083" width="600" height="450" frameborder="0" style="border:0"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.291527288968!2d-73.11186199999996!3d44.488693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cca79d80e6c4a1f%3A0xd0d04db35b4fc6a4!2sKaren&#39;s+Kloset!5e0!3m2!1sen!2sus!4v1417418376083" width="600" height="450" style="border:0"></iframe>
 </p>
 </article>
 

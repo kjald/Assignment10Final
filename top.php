@@ -86,11 +86,7 @@ $thisDatabase = new myDatabase($dbUserName, $whichPass, $dbName);
         }
         ?>	
 
-    </head>
-
-
-
-		<script type="text/javascript">
+<script type="text/javascript">
 function newWindow(imgName, winName, intWidth, intHeight) {
 	var strSize
 	strSize = "width=" + intWidth + ",height=" + intHeight;
@@ -102,5 +98,13 @@ strSize = "width=" + intWidth + ",height=" + intHeight + ",left=" + intLeft + ",
 window.open(imgName, winName, strSize)
 }
 </script>
+
+
+
+
+
+    </head>
+
+
+
 		
-</head>
