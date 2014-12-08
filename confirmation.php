@@ -51,25 +51,16 @@ if (isset($_GET["q"])) {
     //##############################################################
     // get the membership record 
 
-    //$query = "SELECT fldDateJoined, fldEmail, fldScreenName FROM tblRegister WHERE pmkRegisterId = ? ";
-    //$query = "SELECT `fldFirstName`,`fldLastName`,`fldEmails`,`fldZip`,`fldMon`,`fldTue`,`fldWed`,`fldThu`,`fldFri`,`fldSat`,`fldSun`,`fldGroupSize`,`fldEmails`,`fldItems` FROM `tblUser`,`tblShopping`,`tblPromotion` WHERE pmkUserId = ?";
-    //$results = $thisDatabase->select($query, $data);
-
-  
-    
-            $query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-            $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
-            $results = $thisDatabase->insert($query, $data);
-            
-            
-            $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
-            $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);$results = $thisDatabase->insert($query2, $data2);
-            
-            
-            $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-            $data3 = array($fldItems, $fldEmails);
+    $query1 = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
+            $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?'; 
+            $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?'; 
+            $data1 = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
+            $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
+            $data3 = array($fldEmails, $fldItems);
+            $results = $thisDatabase->insert($query1, $data1);
+            $results = $thisDatabase->insert($query2, $data2);
             $results = $thisDatabase->insert($query3, $data3);
-    
+            
     
     
     
@@ -113,7 +104,7 @@ if (isset($_GET["q"])) {
         if ($debug)
             print "<h1>Confirmed</h1>";
 
-        $query = "UPDATE tblUser set fldConfirmed=1 WHERE pmkRegisterId = ? ";
+        $query = "UPDATE tblUser set fldConfirmed=1 WHERE pmkUserId = ? ";
         $results = $thisDatabase->select($query, $data);
 
         if ($debug) {

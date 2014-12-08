@@ -259,49 +259,13 @@ if (isset($_POST["btnSubmit"])) {
         try {
             $thisDatabase->db->beginTransaction();
             
-            //First try on insert
-            //$query = 'INSERT INTO tblUser, tblShopping, tblPromotion WHERE pmkUserId = ? SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?' ;
-            //$query .= 'fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?' ;
-            //$query .= 'fldEmails = ?, fldItems = ?';
-            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
-            
-            
-            //second try on insert
-            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?' ;
-            //$query .= 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?' ;
-            //$query .= 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
-            
-            //third try on insert
-            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-            //$data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
-            
-            //$query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
-            //$data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
-            
-            //$query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-            //$data3 = array($fldItems, $fldEmails);
-            
-            
-            
-            
-            //FOUTH DAMN TRY F THIS
-            //$query = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-           
-            //$query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?';
-            
-            //$query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?';
-            
-           // $data = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode, $fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize, $fldItems, $fldEmails);
-            
-            
             
             //TRY 5
  
             
             
             $query1 = 'INSERT INTO tblUser SET fldFirstName = ?, fldLastName = ?, fldEmail = ?, fldZip = ?';
-            $query2 = 'INSERT INTO tblShopping WHERE pmk = ?, SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?'; 
+            $query2 = 'INSERT INTO tblShopping SET fldMon = ?, fldTue = ?, fldWed = ?, fldThu = ?, fldFri = ?, fldSat = ?, fldSun = ?, fldGroupSize = ?'; 
             $query3 = 'INSERT INTO tblPromotion SET fldEmails = ?, fldItems = ?'; 
             $data1 = array($fldFirstName, $fldLastName, $fldEmail, $fldZipCode);
             $data2 = array($fldMon, $fldTue, $fldWed, $fldThu, $fldFri, $fldSat, $fldSun, $fldGroupSize);
@@ -388,7 +352,7 @@ if (isset($_POST["btnSubmit"])) {
             $cc = "";
             $bcc = "";
             $from = "Karen's Kloset <noreply@yoursite.com>";
-            $subject = "Thanks for entering your data information!";
+            $subject = "Confirm Karen's Information";
 
             $mailed = sendMail($to, $cc, $bcc, $from, $subject, $messageA . $messageB . $messageC);
         } //data entered  
